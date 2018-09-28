@@ -2,7 +2,44 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <title>LearningWebGL_lesson7</title>
 <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
-<script type="text/javascript" src="webgl-utils.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script></head>
+
+
+<body onload="webGLStart();">
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <br>
+    <input type="checkbox" id="lighting" checked=""> Use lighting<br>
+    (Use cursor keys to spin the box and <code>Page Up</code>/<code>Page Down</code> to zoom out/in)
+
+    <br>
+    <h2>Directional light:</h2>
+
+    <table style="border: 0; padding: 10px;">
+        <tbody><tr>
+            <td><b>Direction:</b>
+            </td><td>X: <input type="text" id="lightDirectionX" value="-0.25">
+            </td><td>Y: <input type="text" id="lightDirectionY" value="-0.25">
+            </td><td>Z: <input type="text" id="lightDirectionZ" value="-1.0">
+        </td></tr>
+        <tr>
+            <td><b>Colour:</b>
+            </td><td>R: <input type="text" id="directionalR" value="0.8">
+            </td><td>G: <input type="text" id="directionalG" value="0.8">
+            </td><td>B: <input type="text" id="directionalB" value="0.8">
+        </td></tr>
+    </tbody></table>
+
+    <h2>Ambient light:</h2>
+    <table style="border: 0; padding: 10px;">
+        <tbody><tr>
+            <td><b>Colour:</b>
+            </td><td>R: <input type="text" id="ambientR" value="0.2">
+            </td><td>G: <input type="text" id="ambientG" value="0.2">
+            </td><td>B: <input type="text" id="ambientB" value="0.2">
+        </td></tr>
+    </tbody></table>
+</body>
 <script>
 var shader_fs = `
     precision mediump float;
@@ -433,48 +470,4 @@ function initShaders() {
 </script>
 
 
-</head>
-
-
-<body onload="webGLStart();">
-    <a href="http://learningwebgl.com/blog/?p=684">&lt;&lt; Back to Lesson 7</a><br>
-
-    <canvas id="lesson07-canvas" style="border: none;" width="500" height="500"></canvas>
-
-    <br>
-    <input type="checkbox" id="lighting" checked=""> Use lighting<br>
-    (Use cursor keys to spin the box and <code>Page Up</code>/<code>Page Down</code> to zoom out/in)
-
-    <br>
-    <h2>Directional light:</h2>
-
-    <table style="border: 0; padding: 10px;">
-        <tbody><tr>
-            <td><b>Direction:</b>
-            </td><td>X: <input type="text" id="lightDirectionX" value="-0.25">
-            </td><td>Y: <input type="text" id="lightDirectionY" value="-0.25">
-            </td><td>Z: <input type="text" id="lightDirectionZ" value="-1.0">
-        </td></tr>
-        <tr>
-            <td><b>Colour:</b>
-            </td><td>R: <input type="text" id="directionalR" value="0.8">
-            </td><td>G: <input type="text" id="directionalG" value="0.8">
-            </td><td>B: <input type="text" id="directionalB" value="0.8">
-        </td></tr>
-    </tbody></table>
-
-    <h2>Ambient light:</h2>
-    <table style="border: 0; padding: 10px;">
-        <tbody><tr>
-            <td><b>Colour:</b>
-            </td><td>R: <input type="text" id="ambientR" value="0.2">
-            </td><td>G: <input type="text" id="ambientG" value="0.2">
-            </td><td>B: <input type="text" id="ambientB" value="0.2">
-        </td></tr>
-    </tbody></table>
-
-    <a href="http://learningwebgl.com/blog/?p=684">&lt;&lt; Back to Lesson 7</a>
-
-
-
-</body></html>
+</html>
