@@ -5,7 +5,7 @@
 <script type="text/javascript" src="webgl-utils.js"></script>
 </head><body onload="webGLStart()">
     <canvas id="canvas" width="500" height="500"></canvas><br>
-    <input type="checkbox" id="lighting" checked=""> Use lighting<br>
+    <input type="checkbox" id="lightingChecked" checked=""> Use lighting<br>
     (Use cursor keys to spin the box and <code>Page Up</code>/<code>Page Down</code> to zoom out/in)
     <br>
     <h2>Directional light:</h2>
@@ -373,9 +373,9 @@ function initShaders() {
         gl.activeTexture(gl.TEXTURE0);
         gl.bindTexture(gl.TEXTURE_2D, crateTexture);
         gl.uniform1i(shaderProgram.samplerUniform, 0);
-        var lighting = lighting.checked;
-        gl.uniform1i(shaderProgram.useLightingUniform, lighting);
-        if (lighting) {
+        var lightingChecked = lighting.checked;
+        gl.uniform1i(shaderProgram.useLightingUniform, lightingChecked);
+        if (lightingChecked) {
             gl.uniform3f(
                 shaderProgram.ambientColorUniform,
                 parseFloat(ambientR.value),
